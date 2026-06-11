@@ -5,29 +5,25 @@ public class Main {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.println("Задание 1");
-        int osType = 0;
+        int clientOS = 0;
         System.out.println("Операционная система 0 — iOS, 1 — Android");
-        if (osType == 0) {
+        if (clientOS == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке");
         } else {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
 
         System.out.println("Задание 2");
-        int deviceYear = 2012;
-        System.out.println("Год создания телефона " + deviceYear + " год");
-        if (deviceYear < 2015) {
-            if (osType == 0) {
+        int clientDeviceYear = 2015;
+        System.out.println("Год создания телефона " + clientDeviceYear + " год");
+        if (clientDeviceYear < 2015 && clientOS == 0) {
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            }
-        } else {
-            if (osType == 0) {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для Android по ссылке");
-            }
+        } else if (clientDeviceYear < 2015 && clientOS == 1) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else if (clientDeviceYear >= 2015 && clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else { // (clientDeviceYear >= 2015 && clientOS == 1)
+            System.out.println("Установите версию приложения для Android по ссылке");
         }
 
         System.out.println("Задание 3");
@@ -55,7 +51,7 @@ public class Main {
         System.out.println("Потребуется дней: " + deliveryDays);
 
         System.out.println("Задание 5");
-        int monthNumber = 6;
+        int monthNumber = 12;
         System.out.println("Номер месяца в году " + monthNumber);
         if (monthNumber < 1 || monthNumber > 12) {
             System.out.println("Ошибка, выберите номер месяца от 1 до 12");
