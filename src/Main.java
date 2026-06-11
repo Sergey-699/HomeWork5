@@ -55,7 +55,8 @@ public class Main {
         System.out.println("Номер месяца в году " + monthNumber);
         if (monthNumber < 1 || monthNumber > 12) {
             System.out.println("Ошибка, выберите номер месяца от 1 до 12");
-        } else {
+            return;
+        }
             switch (monthNumber) {
                 case 12:
                 case 1:
@@ -86,4 +87,3 @@ public class Main {
             }
         }
     }
-}
